@@ -1,5 +1,8 @@
 from setuptools import setup
 
+with open('requirements.txt') as f:
+  requirements = f.read().splitlines()
+
 setup(
   name="ppassword",
   version='0.0.1',
@@ -15,5 +18,6 @@ setup(
     'console_scripts': [
       'ppassword = ppassword.main:main'
     ]
-  }
+  },
+  install_requires=requirements
 )
