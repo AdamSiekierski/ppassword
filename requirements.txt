@@ -1,0 +1,2 @@
+libusb==1.0.22b9
+argparse==1.4.0
