@@ -1,10 +1,12 @@
 import platform
-
-def get_drives_mac():
-  return 'hey, mac user'
+import psutil
 
 def get_drives():
-  systems = {
-    "Darwin": get_drives_mac,
-  }
-  return systems.get(platform.system(), lambda:'Your operating system is not yet supported')()
+  all_drives = psutil.disk_partitions()
+  drives = []
+
+  for drive in all_drives:
+    if (drive.fstype == 'msdos' or drive.fstype == 'fat32'):
+      drives.append(drive)
+
+  return drives

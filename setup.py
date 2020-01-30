@@ -16,7 +16,7 @@ setup(
   },
   entry_points = {
     'console_scripts': [
-      'ppassword = ppassword.ppassword:main'
+      'ppassword = ppassword.__main__:main'
     ]
   },
   install_requires=requirements
